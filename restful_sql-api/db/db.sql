@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `retaurant`
+-- Database: `restaurant`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `retaurants`
+-- Table structure for table `restaurants`
 --
 
-CREATE TABLE `retaurants` (
+CREATE TABLE `restaurants` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
   `type` varchar(100) NOT NULL,
@@ -35,10 +35,10 @@ CREATE TABLE `retaurants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `retaurants`
+-- Dumping data for table `restaurants`
 --
 
-INSERT INTO `retaurants` (`id`, `name`, `type`, `img`) VALUES
+INSERT INTO `restaurants` (`id`, `name`, `type`, `img`) VALUES
 (1, 'รสเด็ดอร่อยตามสั่ง - บางซื่อ', 'Coupon, อาหารทะเล, อาหารตามสั่ง, ยำ', 'https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/3-C2N2EY6FTXTHKA/hero/6709b61f83504e22a8b1f5a2ea5851e1_1623751631792385157.webp'),
 (2, 'Got\'s Chicken ไก่ทอดเยาวราช - สัมพันธวงศ์', 'ไก่ทอด', 'https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/3-C3UZR74DWCKWSE/hero/e264d85ce3514197b75d3f34bf160a96_1663737161826424675.webp'),
 (3, 'Hachiban Ramen (ฮะจิบัง ราเมน) - บางลำพู', 'Rice noodles, อาหารเส้น, ราเมน', 'https://d1sag4ddilekf6.cloudfront.net/compressed_webp/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.webp'),
@@ -50,9 +50,9 @@ INSERT INTO `retaurants` (`id`, `name`, `type`, `img`) VALUES
 --
 
 --
--- Indexes for table `retaurants`
+-- Indexes for table `restaurants`
 --
-ALTER TABLE `retaurants`
+ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -60,9 +60,9 @@ ALTER TABLE `retaurants`
 --
 
 --
--- AUTO_INCREMENT for table `retaurants`
+-- AUTO_INCREMENT for table `restaurants`
 --
-ALTER TABLE `retaurants`
+ALTER TABLE `restaurants`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
