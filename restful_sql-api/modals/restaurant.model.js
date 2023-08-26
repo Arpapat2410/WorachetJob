@@ -32,5 +32,8 @@ const Restaurant = sequelize.define("restaurant",{
     }
 })
 
+
+
+
 module.exports = Restaurant;
 

@@ -42,7 +42,7 @@ router.get("/restaurants", (req, res) => {
 
 
 //Get restaurant by id
-//http://locahost:5000/restaurants/2
+//http://localhost:5000/restaurants/2
 router.get("/restaurants/:id", (req, res) => {
     const restaurantId = Number.parseInt(req.params.id);
     Restaurant.getById(restaurantId, (err, data) => {
