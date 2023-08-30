@@ -4,4 +4,4 @@
 > Autor : Arpapat Yipram
 > PORT : http://localhost:3000/forntend_restaurant/index.html
 > Database : Restaurant
-> Dependencies : core , express , mysql , nodemon , sequelize 
+> Dependencies : core , express , mysql , nodemon , sequelize asdasdsadsad 
