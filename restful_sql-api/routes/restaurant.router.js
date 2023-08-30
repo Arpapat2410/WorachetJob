@@ -44,16 +44,13 @@ router.put("/restaurants/:id", async (req,res) =>{
         const restaurantId = req.params.id;
         const restaurantData = req.body;
         const updateRetaurant = await Restaurant.updateById(restaurantId, restaurantData)
-        res.status(200).json(updateRetaurant);
-        if(error) {
-            if(error.kind === "not_found"){
-                res.status(400)({error : "Reataurant not found"});
-            }else{
-                res.status(500).json({error: "reataurant not found"});
-            }
-        }
+        res.status(200).json(updateRestaurant);
     } catch (error) {
-        res.status(500).json({error: "Failed to update reataurants data"});
+        if (error.kind === "not_found") {
+            res.status(400).json("Restaurant not found")
+        }else{
+            res.status(500).json({error:"failed to Update Restaurant data"});
+        }
     }
 })
 

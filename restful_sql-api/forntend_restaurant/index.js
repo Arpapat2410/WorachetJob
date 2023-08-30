@@ -1,15 +1,39 @@
+const deleteRestaurant = async (id) => {
+    if (id) {
+        try{
+          const restaurant = await fetch( "http://localhost:5000/restaurants/" + id, {
+            method: "DELETE",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {"Content-Type": "application/json",
+          },
+        }).then((response) => {
+            return response.json();  
+        }).then(() => {
+            alert(`Delete Succeed`); 
+            location.reload(); 
+        });
+        } catch (error) {
+            //alert(`Restaurent : ${id} is missing`);
+        }
+      } else {
+          //alert("Restaurent is missing")
+      }
+  }
+
 const genRestaurantCard = (restaurant) => {
     const card = document.createElement("div")
     card.className = "card"
-    card.style = "width : 18rem;"
+    card.style = "width : 20rem;"
 
     const resCrad = `
             <img src="${restaurant.img}" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">${restaurant.name}</h5></h5>
             <p class="card-text">${restaurant.type}</p>
-            <a href="#" class="btn btn-danger">Delete</a>
-            <a href="#" class="btn btn-warning">Edit</a>
+            <a href="edit.html?id=${restaurant.id}" class="btn btn-warning">Edit</a>
+          <a href="" class="btn btn-danger col-xs-2" onclick="deleteRestaurant(${restaurant.id})">Delete</a>
             </div>
         </div>
         `;      
@@ -39,7 +63,6 @@ const onload = async () => {
 
 }
 const main = () => {
-    console.log("Hello world");
     onload();
 }
 

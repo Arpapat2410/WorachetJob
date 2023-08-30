@@ -71,19 +71,18 @@ Restaurant.updateById = (id, restaurant,result)=>{
     //UPDATE restaurants SET name ="name" , type="type" , img ="img" WHERE id "id"
         sql.query("UPDATE restaurants SET name = ? , type = ? , img = ? WHERE id = ?",
         [restaurant.name,restaurant.type,restaurant.img,id],
-        (err,res) =>{
-            if(err){
+        (err,res) => {
+            if (err) {
                 result(err,null);
                 return;
             }
-            if(res.affectedRow == 0){
-                result({kind:"not_found"},null);
+            if (res.affectedRows == 0) {
+                result ({kind: "not_found"}, null)
                 return;
             }
-            result(null,{id : id, ...restaurant});
-        }
-    );
-};
+            result(null, {id: id, ...restaurant});
+        });
+    };
 
 //Delete a reataurant
 Restaurant.deleteById = (reataurantId,result)=>{

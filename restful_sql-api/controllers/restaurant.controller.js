@@ -41,17 +41,17 @@ Restaurant.getById = async (restaurantId) => {
 }
 
 //update a restaurants 
-Restaurant.updateById = async (id , restaurantData) => {
+Restaurant.updateById = async (id, restaurantData) =>{
     try {
         const [rowUpdated] = await Restaurant.update(restaurantData, {
-            where : {id} ,
-        })
-        if(rowUpdated === 0) {
-            throw{kind : "not_foumd"};
+            where: {id},
+        });
+        if (rowUpdated === 0) {
+            throw{kind: "not_found"};
         }
-        return {id:id, ...restaurantData}
+        return {id:id, ...restaurantData};
     } catch (error) {
-        console.error("error:", error);
+        console.log("error:", error);
         throw error;
     }
 }
